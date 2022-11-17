@@ -31,7 +31,7 @@ Using Ordinary Least Squares method, I fitted the data to a linear regression mo
 ![Residuals plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Residuals%20plot.png)
 ![ACF and PACF plots](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/ACF%20and%20PACF%20plots.png)
 Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there is
-autocorrelation at 4-year and 8-year periods in the data, which may resulted from cycles of investment packages in Vietnam. 
+autocorrelation at 4-year (from PACF plot) and 8-year (from Durbin-Watson) periods in the data, which may resulted from cycles of investment packages in Vietnam. 
 ### Final model and diagnostic test
 I created a final model, model_p4, for the FDI data, and I compared it with model_p8 using ANOVA. The result is significant but the actual changes in the graph is minimal so I chose model_p4 as my final model. 
 ![Model p4 vs Model p8](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Model%20p4%20vs%20p8.png)
@@ -40,7 +40,7 @@ I created a final model, model_p4, for the FDI data, and I compared it with mode
 ![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png) <br />
 Starting point: intercept + time + Vietnam + VNtime = 0.164 billion USD <br />
 Changes every year from 1986-2005: time + VNtime = 0.105 billion USD <br />
-Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644 billions USD <br />
+Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644 billion USD <br />
 Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79 billion USD <br />
 ![Regression plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
 ### What if there was no change in policy
