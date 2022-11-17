@@ -37,6 +37,7 @@ I created a final model, model_p4, for the FDI data, and I compared it with mode
 ## Result
 ### Regression model
 ![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png)
+
 Starting point: intercept + time + Vietnam + VNtime = 0.164b USD
 Changes every year from 1986-2005: time + VNtime = 0.105b USD
 Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644b USD
