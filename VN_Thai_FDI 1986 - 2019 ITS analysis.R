@@ -56,7 +56,7 @@ confint(model_ols)
 
 # Durbin-watson test to 12 lags
 dwt(model_ols,max.lag=12,alternative="two.sided")
-#lag at 8
+#lag at p8
 # Graph the residuals from the OLS regression to check for serially correlated errors
 plot(vn_th_fdi$time[1:34],
      residuals(model_ols)[1:34],
@@ -73,18 +73,18 @@ par(mfrow=c(1,2))
 
 # Produce Plots
 acf(residuals(model_ols))
-acf(residuals(model_ols),type='partial') #lag at p 4
-
+acf(residuals(model_ols),type='partial') #lag at p4
+par(mfrow=c(1,1))
 ########################
 # Run the final model
 ########################
 
 # Fit the GLS regression model
 model_p4 <- gls(Inflows_USD ~ time + Vietnam + VNtime + level + trend + VNlevel +
-                   VNtrend,
-                 data=vn_th_fdi,
-                 correlation=corARMA(p=4,form=~time|Vietnam),
-                 method="ML")
+                  VNtrend,
+                data=vn_th_fdi,
+                correlation=corARMA(p=4,form=~time|Vietnam),
+                method="ML")
 summary(model_p4)
 confint(model_p4)
 
@@ -94,8 +94,9 @@ confint(model_p4)
 ########################
 
 # Likelihood-ratio tests to check whether the parameters of the AR process for the errors are necessary and sufficient
-#model_p11 <- update(model_p10,correlation=corARMA(p=11,form=~time|Vietnam))
-#anova(model_p10,model_p11) #not significant
+model_p8 <- update(model_p4,correlation=corARMA(p=8,form=~time|Vietnam))
+anova(model_p8,model_p4) 
+# significant, but actual graphs are not much different from each other, so we'll stick with model p4
 
 ########################
 # Plot results
@@ -146,21 +147,3 @@ segments(1, model_p4$coef[1]+model_p4$coef[2],
 
 # Add in a legend
 legend(x=3, y=15, legend=c("Vietnam","Thailand"), col=c("blue","red"),pch=20)
-
-
-##############################################
-# Predict absolute and relative changes
-##############################################
-
-# Predicted value at 15 years after the policy change
-pred <- fitted(model_p10)[52]
-
-# Estimate the counterfactual at the same time point
-cfac <- model_p10$coef[1] + model_p10$coef[2]*52 +
-  model_p10$coef[3] + model_p10$coef[4]*52 +
-  model_p10$coef[5] + model_p10$coef[6]*25
-
-# Absolute change at 15 years
-pred - cfac
-# Relative change at 15 years
-(pred - cfac) / cfac
