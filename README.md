@@ -27,6 +27,7 @@ First I want to see how FDI in Vietnam and Thailand changed over the time period
 Using Ordinary Least Squares method, I fitted the data to a linear regression model
 ![OLS model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/OLS%20model.png)
 ### Assessing Autocorrelation
+![Durbin-Watson test](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Durbin-Watson%20test.png)
 ![Residuals plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Residuals%20plot.png)
 ![ACF and PACF plots](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/ACF%20and%20PACF%20plots.png)
 Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there is
@@ -37,13 +38,12 @@ I created a final model, model_p4, for the FDI data, and I compared it with mode
 ## Result
 ### Regression model
 ![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png) <br />
-Starting point: intercept + time + Vietnam + VNtime = 0.164b USD <br />
-Changes every year from 1986-2005: time + VNtime = 0.105b USD <br />
-Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644b USD <br />
-Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79b USD <br />
-
+Starting point: intercept + time + Vietnam + VNtime = 0.164 billion USD <br />
+Changes every year from 1986-2005: time + VNtime = 0.105 billion USD <br />
+Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644 billions USD <br />
+Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79 billion USD <br />
 ![Regression plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
 ### What if there was no change in policy
-Using the Vietnam predicted line, we have the predicted value in 2019 of 14.9b USD.<br />
-Using the Vietnam counterfactual line, we have the counterfactual value (ie. if Vietnam had the same trend as Thailand), we have the value of -6.76b USD (which is not likely happen in real world, we just use counterfactual value for demonstrating purpose). <br />
-If there was no change in investment policy in 2005, the differences between current FDI and theoretical FDI of Vietnam is 21.633 billion USD, highlighting the effectiveness of the changes in foreign investment policy of Vietnamese government. 
+Using the Vietnam predicted line, we have the predicted value in 2019 of 14.9 billions USD.<br />
+Using the Vietnam counterfactual line, we have the counterfactual value (ie. if Vietnam had the same trend as Thailand), we have the value of -6.76 billions USD (which is not likely happen in real world, we just use counterfactual value for demonstrating purpose). <br />
+If there was no change in investment policy in 2005, the differences between current FDI and theoretical FDI of Vietnam is 21.633 billions USD, highlighting the effectiveness of the changes in foreign investment policy of Vietnamese government. 
