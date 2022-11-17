@@ -7,6 +7,7 @@ ITS, or quasi-experimental time series analysis, is a linear regression analysis
 
 ## Data preparation
 ![Data table](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Data%20table.png)
+
 The data file has 9 columns:
 - date: indicate the year
 - Vietnam: 1 if Vietnam, 0 if Thailand
@@ -26,19 +27,20 @@ First I want to see how FDI in Vietnam and Thailand changed over the time period
 Using Ordinary Least Squares method, I fitted the data to a linear regression model
 ![OLS model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/OLS%20model.png)
 ### Assessing Autocorrelation
-Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there are correlation in 4-year and 8-year periods in the data, which may resulted from cycles of investment packages in Vietnam. 
 ![Residuals plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Residuals%20plot.png)
 ![ACF and PACF plots](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/ACF%20and%20PACF%20plots.png)
+Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there are 
+correlation in 4-year and 8-year periods in the data, which may resulted from cycles of investment packages in Vietnam. 
 ### Final model and diagnostic test
 I created a final model, model_p4, for the FDI data, and I compared it with model_p8 using ANOVA. The result is significant but the actual changes in the graph is minimal so I chose model_p4 as my final model. 
-
+![Model p4 vs Model p8](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Model%20p4%20vs%20p8.png)
 ## Result
 ### Regression model
+![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png)
 Starting point: intercept + time + Vietnam + VNtime = 0.164b USD
 Changes every year from 1986-2005: time + VNtime = 0.105b USD
 Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644b USD
 Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79b USD
-![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png)
 ![Regression plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
 ### What if there was no change in policy
 Using the Vietnam predicted line, we have the predicted value in 2019 of 14.9b USD.
