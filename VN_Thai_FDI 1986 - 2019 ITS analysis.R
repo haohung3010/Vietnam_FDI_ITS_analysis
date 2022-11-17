@@ -104,7 +104,7 @@ anova(model_p8,model_p4)
 
 # First plot the raw data points for Vietnam
 plot(vn_th_fdi$time[1:34],vn_th_fdi$Inflows_USD[1:34],
-     ylim=c(-5,17),
+     ylim=c(-8,17),
      ylab="Inflow (USD billion",
      xlab="Year",
      pch=20,
@@ -147,3 +147,20 @@ segments(1, model_p4$coef[1]+model_p4$coef[2],
 
 # Add in a legend
 legend(x=3, y=15, legend=c("Vietnam","Thailand"), col=c("blue","red"),pch=20)
+
+##############################################
+# Predict absolute and relative changes
+##############################################
+
+# Predicted value at 14 years after the policy change
+pred <- fitted(model_p4)[34]
+
+# Estimate the counterfactual at the same time point
+cfac <- model_p4$coef[1] + model_p4$coef[2]*34 +
+  model_p4$coef[3] + model_p4$coef[4]*34 +
+  model_p4$coef[5] + model_p4$coef[6]*34
+
+# Absolute change at 14 years
+pred - cfac
+# Relative change at 14 years
+(pred - cfac) / cfac
