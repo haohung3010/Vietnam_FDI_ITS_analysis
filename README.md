@@ -33,7 +33,7 @@ Using Ordinary Least Squares method, I fitted the data to a linear regression mo
 Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there is
 autocorrelation at 4-year (from PACF plot) and 8-year (from Durbin-Watson) periods in the data, which may resulted from cycles of investment packages in Vietnam. 
 ### Final model and diagnostic test
-I created a final model, model_p4, for the FDI data, and I compared it with model_p8 using ANOVA. The result is significant but the actual changes in the graph is minimal so I chose model_p4 as my final model. 
+I created 2 final models, model_p4 and model_p8, and I compared them using ANOVA. The result was significant but the actual changes in the graph were minimal so I chose model_p4 as my final model. 
 ![Model p4 vs Model p8](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Model%20p4%20vs%20p8.png)
 ## Result
 ### Regression model
