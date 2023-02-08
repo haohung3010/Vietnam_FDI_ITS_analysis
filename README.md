@@ -40,10 +40,10 @@ I created 2 final models, model_p4 and model_p8, and I compared them using ANOVA
 ![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png) <br />
 Starting point: intercept + time + Vietnam + VNtime = 0.164 billion USD <br />
 Changes every year from 1986-2005: time + VNtime = 0.105 billion USD <br />
-Changes in level between at the intervention (2005-2006): level + VNlevel = 1.644 billion USD <br />
+Changes in level at the intervention (between 2005-2006): level + VNlevel = 1.644 billion USD <br />
 Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79 billion USD <br />
 ![Regression plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
 ### What if there was no change in policy
 Using the Vietnam predicted line, we have the predicted value in 2019 of 14.9 billions USD.<br />
-Using the Vietnam counterfactual line, we have the counterfactual value (ie. if Vietnam had the same trend as Thailand), we have the value of -6.76 billions USD (which is not likely happen in real world, we just use counterfactual value for demonstrating purpose). <br />
+Using the Vietnam counterfactual line, we have the counterfactual value (ie. if Vietnam had the same trend as Thailand) of -6.76 billions USD, which is not likely happen in real world, we just use counterfactual value for demonstrating purpose. <br />
 If there was no change in investment policy in 2005, the differences between current FDI and theoretical FDI of Vietnam is 21.633 billions USD, highlighting the effectiveness of the changes in foreign investment policy of Vietnamese government. 
