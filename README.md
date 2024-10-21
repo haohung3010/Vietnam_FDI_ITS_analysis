@@ -22,27 +22,27 @@ The data file has 9 columns:
 ## Analysis steps
 ### Plot the data
 First I want to see how FDI in Vietnam and Thailand changed over the time period
-![Initial plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Initial%20plot.png)
+![Initial plot](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Initial%20plot.png)
 ### Fitting initial regression model
 Using Ordinary Least Squares method, I fitted the data to a linear regression model
-![OLS model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/OLS%20model.png)
+![OLS model](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/OLS%20model.png)
 ### Assessing Autocorrelation
-![Durbin-Watson test](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Durbin-Watson%20test.png)
-![Residuals plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Residuals%20plot.png)
-![ACF and PACF plots](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/ACF%20and%20PACF%20plots.png)
+![Durbin-Watson test](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Durbin-Watson%20test.png)
+![Residuals plot](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Residuals%20plot.png)
+![ACF and PACF plots](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/ACF%20and%20PACF%20plots.png)
 Autocorrelation is a bias that commonly happen in time series, where one data point is related to others due to seasonal changes or other reasons. I used Durbin-Watson test, residuals plot, autocorrelation function (ACF) & partial autocorrelation function (PACF) to assess the correlation between data points. I found that there is
 autocorrelation at 4-year (from PACF plot) and 8-year (from Durbin-Watson) periods in the data, which may resulted from cycles of investment packages in Vietnam. 
 ### Final model and diagnostic test
 I created 2 final models, model_p4 and model_p8, and I compared them using ANOVA. The result was significant but the actual changes in the graph were minimal so I chose model_p4 as my final model. 
-![Model p4 vs Model p8](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Model%20p4%20vs%20p8.png)
+![Model p4 vs Model p8](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Model%20p4%20vs%20p8.png)
 ## Result
 ### Regression model
-![Regression model](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png) <br />
+![Regression model](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/p4%20model.png) <br />
 Starting point: intercept + time + Vietnam + VNtime = 0.164 billion USD <br />
 Changes every year from 1986-2005: time + VNtime = 0.105 billion USD <br />
 Changes in level at the intervention (between 2005-2006): level + VNlevel = 1.644 billion USD <br />
 Changes every year from 2006-2019: time + trend + VNtime + VNtrend = 0.79 billion USD <br />
-![Regression plot](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
+![Regression plot](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Final%20plot.png)
 ### What if there was no change in policy
 Using the Vietnam predicted line, we have the predicted value in 2019 of 14.9 billions USD.<br />
 Using the Vietnam counterfactual line, we have the counterfactual value (ie. if Vietnam had the same trend as Thailand) of -6.76 billions USD, which is not likely happen in real world, we just use counterfactual value for demonstrating purpose. <br />
