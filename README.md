@@ -6,7 +6,7 @@ In this analysis, I pulled data of Foreign Direct Investment (FDI) in Vietnam fr
 ITS, or quasi-experimental time series analysis, is a linear regression analysis technique that is commonly used in investigating effect of policy change/interruption in public health, political sciences, economics,...  The method has the advantages of not requiring randomized setup and can quantify the changes in trend and level at the interrupted time point. In this analysis, ITS is used to evaluate the change in investment policy of Vietnamese government in December 2005. The start year is 1986, as this year was the time Vietnam openned its economy to the world. The control group is Thailand, a country in South East Asia that has a comparable geographical location, culture, and history to Vietnam. 
 
 ## Data preparation
-![Data table](https://haohung3010.github.io/images_repos/VN-Thailand%20FDI%20ITS%20analysis/Data%20table.png)
+![Data table](https://github.com/haohung3010/images_repos/blob/main/VN-Thailand%20FDI%20ITS%20analysis/Data%20table.png)
 
 The data file has 9 columns:
 - date: indicate the year
